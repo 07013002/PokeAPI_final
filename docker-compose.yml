@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  node_app:
+    image: node:latest  # Usa a imagem oficial do Node.js
+    volumes:
+      - .:/usr/src/app   # Monta o diretório atual no contêiner
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"  # Mapeia a porta 3000 do contêiner para a porta 3000 do host
